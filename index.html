@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jengetsu Hōzuki — L'héritier du nom</title>
+  <meta name="description" content="Candidature de Jengetsu Hōzuki, fils de Seigetsu.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+    :root {
+      --ink: #e9f5f2; --muted: #9db7b7; --deep: #071719; --panel: rgba(12, 37, 39, .72);
+      --line: rgba(169, 224, 218, .16); --aqua: #91e1d3; --gold: #edc27e;
+    }
+    main { display:flex; flex-direction:column; }
+    main > .hero { order:0; }
+    main > #parcours { order:1; }
+    main > #dossier { order:2; }
+    main > #vision { order:3; }
+    main > .quote-section { order:4; }
+    main > #jeu { order:5; }
+    body { margin:0; color:var(--ink); background:var(--deep); font-family:Manrope,sans-serif; overflow-x:hidden; }
+    body::before { content:""; position:fixed; inset:0; z-index:-2; background:radial-gradient(circle at 72% 8%, #164a70 0, transparent 34%), linear-gradient(135deg, #050c18 0%, #0b2035 55%, #071b2e 100%); }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1160px,calc(100% - 48px)); margin:auto; }
+    nav { position:fixed; top:0; left:0; right:0; z-index:5; padding:22px 0; background:linear-gradient(180deg,rgba(4,13,15,.9),transparent); }
+    nav .wrap { display:flex; justify-content:space-between; align-items:center; }
+    .mark { font-family:"Cormorant Garamond",serif; font-size:24px; letter-spacing:.08em; }
+    .mark span,.eyebrow,h1 em,.story h3 { color:var(--aqua); }
+    .navlinks { display:flex; gap:28px; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.18em; }
+    .music-actions { display:flex; align-items:center; gap:12px; }
+    .sound { border:1px solid var(--line); border-radius:99px; padding:10px 14px; background:rgba(255,255,255,.03); color:var(--ink); cursor:pointer; font:inherit; font-size:11px; text-transform:uppercase; }
+    .sound.on { color:var(--deep); background:var(--aqua); }
+    .hero { min-height:100vh; display:grid; place-items:center; padding:130px 0 90px; }
+    .hero-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:70px; align-items:center; }
+    .sigil { width:min(360px,80vw); aspect-ratio:1; margin:auto; border:1px solid rgba(158,219,255,.4); border-radius:48% 52% 44% 56%; transform:rotate(12deg); display:grid; place-items:center; box-shadow:0 0 100px rgba(158,219,255,.16); }
+    .sigil::after { content:"水"; font-family:"Cormorant Garamond",serif; font-size:126px; color:var(--aqua); }
+    section { padding:120px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:30px; margin-bottom:48px; }
+    .section-head h2 { font-family:"Cormorant Garamond",serif; font-size:clamp(42px,6vw,78px); font-weight:500; line-height:.95; max-width:650px; margin:0; }
+    .section-head p,.story p,.card p,.detail-grid p { color:var(--muted); line-height:1.8; font-size:14px; } .story { display:grid; grid-template-columns:1fr 1fr; gap:0 48px; } .story article { padding:30px 0; border-top:1px solid var(--line); } .story article:nth-child(even) { border-left:1px solid var(--line); padding-left:30px; } .objectives { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px; } .objective { padding:24px; border:1px solid var(--line); background:rgba(158,219,255,.04); } .objective span { color:var(--gold); font-size:11px; letter-spacing:.16em; text-transform:uppercase; } .objective p { color:var(--muted); line-height:1.7; font-size:13px; }
+    h1,h2,h3 { font-family:"Cormorant Garamond",serif; font-weight:500; line-height:.95; margin:0; }
+    h1 { font-size:clamp(64px,10vw,142px); } h1 em { display:block; font-style:normal; }
+    .lede { max-width:540px; margin:30px 0; color:var(--muted); line-height:1.8; }
+    .button { display:inline-flex; padding:14px 20px; margin-right:10px; border:1px solid var(--aqua); background:var(--aqua); color:var(--deep); font-weight:700; font-size:12px; text-transform:uppercase; }
+    .button.alt { background:transparent; color:var(--ink); border-color:var(--line); }
+    .timeline { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .timeline article { padding:28px 22px 30px 0; min-height:190px; } .timeline article+article { border-left:1px solid var(--line); padding-left:22px; }
+    .num,.summary-number { font-family:"Cormorant Garamond",serif; font-size:44px; color:var(--gold); }
+    .timeline h3 { font-size:28px; margin:8px 0 12px; }
+    .quote { padding:76px 7%; border:1px solid var(--line); background:rgba(158,219,255,.06); text-align:center; }
+    blockquote { font-family:"Cormorant Garamond",serif; font-size:clamp(34px,5vw,66px); margin:0; } blockquote em { color:var(--aqua); }
+    .columns { display:grid; grid-template-columns:1fr 1fr; gap:20px; } .card { padding:30px; border:1px solid var(--line); background:var(--panel); }
+    .card h3 { font-size:36px; margin-bottom:18px; } .chips { display:flex; flex-wrap:wrap; gap:9px; margin-top:22px; }
+    .chip { border:1px solid var(--line); padding:7px 10px; color:var(--aqua); font-size:11px; text-transform:uppercase; letter-spacing:.08em; }
+    .accordion { border-top:1px solid var(--line); } details { border-bottom:1px solid var(--line); }
+    summary { list-style:none; cursor:pointer; display:grid; grid-template-columns:70px 1fr 30px; align-items:center; gap:16px; padding:24px 0; }
+    summary::-webkit-details-marker { display:none; } summary b { font-family:"Cormorant Garamond",serif; font-size:31px; font-weight:500; } summary small { display:block; color:var(--muted); font-size:11px; text-transform:uppercase; margin-top:6px; }
+    summary i { color:var(--aqua); font-size:25px; font-style:normal; } details[open] summary i { transform:rotate(45deg); }
+    .detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; padding:4px 46px 34px 86px; } .detail-grid h4 { color:var(--aqua); font-family:"Cormorant Garamond",serif; font-size:27px; font-weight:500; margin:0 0 12px; }
+    .person-photo { width:100%; max-height:210px; object-fit:cover; display:block; margin-bottom:10px; border:1px solid var(--line); filter:saturate(1.05) contrast(1.08); } .photo-note { display:block; color:var(--muted); font-size:11px; font-style:italic; margin-bottom:18px; }
+    .music-player { position:fixed; right:24px; bottom:24px; z-index:6; width:300px; padding:10px; border:1px solid var(--line); background:rgba(5,15,27,.95); opacity:0; transform:translateY(16px); pointer-events:none; transition:.3s; } .music-player.open { opacity:1; transform:none; pointer-events:auto; } .music-player iframe { width:100%; aspect-ratio:16/9; border:0; } .music-caption { padding-top:8px; text-align:right; } .music-caption a { color:var(--aqua); font-size:10px; text-transform:uppercase; }
+    footer { padding:50px 0 70px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
+    .reveal { opacity:0; transform:translateY(18px); transition:opacity .8s ease,transform .8s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    @media (max-width:760px) {
+      .wrap { width:min(100% - 32px, 560px); } .navlinks { display:none; } .sound { margin-left:auto; }
+      .hero-grid, .story, .columns, .detail-grid, .objectives { grid-template-columns:1fr; gap:0; } .hero { padding-top:150px; }
+      .sigil { width:250px; margin-top:70px; } .story article, .story article:nth-child(even) { padding:30px 0; border-left:0; }
+      .timeline { grid-template-columns:1fr 1fr; } .timeline article:nth-child(3) { border-left:0; padding-left:0; }
+      summary { grid-template-columns:42px 1fr 25px; gap:10px; } summary b { font-size:25px; } .detail-grid { padding:0 0 28px; } .detail-grid > div + div { margin-top:28px; } .objective { margin-top:16px; }
+      .section-head { display:block; } .section-head p { margin-top:20px; } section { padding:80px 0; }
+      footer .wrap { display:block; } footer span { display:block; margin-top:10px; }
+      .music-player { right:16px; bottom:16px; width:min(300px, calc(100vw - 32px)); }
+    }
+  </style>
+</head>
+<body>
+  <nav><div class="wrap"><a class="mark" href="#top">J<span>H</span></a><div class="navlinks"><a href="#parcours">Personnages</a><a href="#vision">Jengetsu</a><a href="#jeu">Créer du jeu</a></div><div class="music-actions"><button class="sound" id="sound" aria-pressed="false">Jouer le son</button><a class="music-link" href="https://youtu.be/V_jQ81v_xf8?si=JKo4sXicGFzDDhOl" target="_blank" rel="noreferrer">Ouvrir YouTube</a></div></div></nav>
+  <main id="top">
+    <section class="hero"><div class="wrap hero-grid">
+      <div class="reveal"><div class="eyebrow">Candidature Hōzuki · Kirigakure</div><h1>Jengetsu <em>Hōzuki</em></h1><p class="lede">Trois personnages passés, des expériences concrètes et une direction artistique complète pour un héritier qui veut enfin écrire son propre nom.</p><div class="hero-actions"><a class="button" href="#parcours">Découvrir le dossier</a><a class="button alt" href="#vision">Découvrir Jengetsu</a></div></div>
+      <div class="sigil reveal" aria-hidden="true"></div>
+    </div></section>
+
+    <section id="parcours"><div class="wrap">        <div class="section-head reveal"><div><div class="eyebrow">01 · Personnages passés</div><h2>Créer du jeu,<br>pas seulement un personnage.</h2></div><p>Trois parcours, trois univers et une même ligne directrice : provoquer des scènes, transmettre, enquêter et faire évoluer les histoires des autres joueurs.</p></div>
+      <div class="timeline reveal">
+        <article><div class="num">01</div><h3>Yaeru 'Aburame' Minazuki</h3><p>Entre héritage brisé et vengeance silencieuse, Yaeru a gravé son histoire dans les secrets du clan Aburame.</p></article>
+        <article><div class="num">02</div><h3>Azren Kaguya</h3><p>À la recherche de ses origines, Azren a transformé l’exil en passerelle entre les clans, les alliances et les destins.</p></article>
+        <article><div class="num">03</div><h3>Kyota Kinatsushi</h3><p>Entre les murmures de l’hôpital et les illusions du Genjutsu, Kyota a fait de chaque rencontre le début d’une nouvelle histoire.</p></article>
+      </div>
+    </div></section>
+
+    <section id="vision"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">02 · Direction artistique</div><h2>L’héritage comme terrain de jeu.</h2></div><p>Jengetsu ne veut pas effacer son père. Il veut comprendre ce qu’il a bâti, puis décider de ce qui mérite de lui survivre.</p></div>
+      <div class="story reveal">
+        <article><h3>Personnalité de Jengetsu Hōzuki</h3><p>Jengetsu grandit entouré de privilèges, de richesses et d’attentions. Contrairement à son père, il ne manque de rien. Seigetsu est présent, impliqué dans son éducation et lui transmet l’ensemble des valeurs de la famille Hōzuki.<br><br>Pourtant, cette enfance idéale devient progressivement une prison. Partout où il se rend, Jengetsu est comparé à son père. Chaque réussite est attribuée à son sang. Chaque erreur est jugée plus sévèrement parce qu’il est un Hōzuki. Aux yeux du monde, il n’est pas Jengetsu : il est simplement le fils de Seigetsu.<br><br>Cette situation fait naître une profonde frustration. Là où son père cherchait à obtenir l’amour qu’on lui refusait, Jengetsu cherche sa propre identité. Il devient ambitieux, réfléchi et particulièrement compétitif. Toute sa vie devient une lutte silencieuse contre l’héritage de Seigetsu.</p></article>
+        <article><h3>Le monde des héritages</h3><p>En observant les nobles, les chefs de clan et les dirigeants du monde shinobi, Jengetsu constate que chacun tente de laisser quelque chose derrière lui : une famille, un clan, une idéologie ou une légende.<br><br>Pour lui, la véritable immortalité ne réside pas dans les techniques ou le pouvoir, mais dans l’héritage qu’un individu transmet aux générations suivantes. Il cherche donc à bâtir un monde où les grandes familles et les grands clans remplacent peu à peu les individus dans l’histoire.<br><br><strong>Les hommes meurent. Les lignées demeurent.</strong> À ses yeux, la stabilité du monde dépend des héritiers capables de porter le poids de leurs ancêtres.</p></article>
+        <article><h3>Relation avec les Hōzuki</h3><p>Jengetsu éprouve une immense fierté envers son clan, mais nourrit également une certaine rancœur. Il a parfois l’impression que les autres Hōzuki voient davantage en lui l’héritier de Seigetsu que Jengetsu lui-même. Il cherche constamment à se distinguer de ses cousins et des autres membres du clan afin de construire sa propre réputation, sans devenir une simple continuation de l’histoire écrite par son père.</p></article>
+        <article><h3>Relation avec Seigetsu</h3><p>Jengetsu admire son père plus que n’importe qui. Il a grandi en écoutant les récits de ses exploits et en observant le respect qu’il inspire. Mais cette admiration est accompagnée d’une jalousie qu’il ne parvient jamais totalement à faire disparaître. Peu importe ses efforts ou ses victoires, elles paraissent toujours appartenir à un autre. Dans ses moments les plus sombres, il se demande si le monde aurait davantage remarqué son existence s’il était né dans une famille ordinaire.</p></article>
+        <article><h3>Relation envers le village</h3><p>Jengetsu apprécie sincèrement Kirigakure. Il considère le village comme l’œuvre de plusieurs générations d’Hōzuki. Là où son père voyait parfois un rival lui ayant volé son père, Jengetsu voit une responsabilité. Protéger Kirigakure revient à protéger une partie de l’histoire de sa famille. Il possède toutefois une vision élitiste du pouvoir : les personnes occupant des postes importants doivent être exemplaires et transmettre leur savoir.</p></article>
+        <article><h3>Relation envers le Genjutsu</h3><p>Jengetsu maîtrise le Genjutsu par respect pour son héritage familial, sans partager totalement la fascination de son père pour les illusions. Il préfère utiliser cet art pour influencer les perceptions, révéler les vérités cachées ou tester la valeur d’un individu.<br><br>Pour lui, les illusions sont des instruments. Jamais une destination.</p></article>
+      </div>
+      <div class="columns reveal" style="margin-top:20px"><article class="card"><h3>Points forts</h3><p><b>Ambitieux :</b> chaque objectif atteint devient une nouvelle étape.<br><b>Charismatique :</b> il attire l’attention et inspire naturellement.<br><b>Cultivé :</b> il connaît l’histoire, la diplomatie et les traditions shinobi.<br><b>Visionnaire :</b> ses décisions s’inscrivent dans une stratégie de long terme.</p></article><article class="card"><h3>Points faibles</h3><p><b>Complexe d’infériorité :</b> il souffre de la comparaison avec son père.<br><b>Orgueilleux :</b> il supporte difficilement qu’on minimise ses accomplissements.<br><b>Besoin de reconnaissance :</b> il veut être reconnu pour lui-même.<br><b>Obsession héritée :</b> il pense parfois les relations en termes de descendance et de transmission, au détriment de liens plus simples.</p></article></div>
+      <div class="objectives reveal"><div class="objective"><span>Court terme</span><p><b>Découvrir l’œuvre de Seigetsu.</b> Comprendre ce qu’il souhaite conserver ou dépasser, se faire un nom, découvrir le monde et trouver des alliés qui le suivent pour lui-même.</p></div><div class="objective"><span>Moyen terme</span><p><b>Créer son propre cercle.</b> Rassembler de jeunes héritiers, développer l’influence Hōzuki sans dominer les autres et préparer la génération suivante.</p></div><div class="objective"><span>Long terme</span><p><b>Le Cercle des Héritiers.</b> Réunir les futurs dirigeants, dépasser Seigetsu en bâtissant quelque chose de plus durable et devenir un nom à part entière.</p></div></div>
+    </div></section>
+    <section class="quote-section"><div class="wrap"><div class="quote reveal"><blockquote>Les hommes meurent.<br><em>Les lignées demeurent.</em></blockquote><cite>La conviction qui guidera Jengetsu</cite></div></div></section>
+
+    <section id="dossier"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">03 · Dossier complet</div><h2>Tout ce qui nourrit sa candidature.</h2></div><p>Les expériences, les preuves de création de jeu et la trajectoire complète de Jengetsu, réunies au même endroit.</p></div>
+      <div class="accordion reveal">
+        <details open><summary><span class="summary-number">01</span><span><b>Yaeru · Aburame · Minazuki</b><small>Jonin nukenin · Konoha</small></span><i>+</i></summary><div class="detail-grid">
+          <div><img class="person-photo" src="yaeru.jpg" alt="Yaeru Aburame Minazuki"><span class="photo-note">Yaeru — un instant au cœur de Konoha.</span><img class="person-photo" src="yaeru-kiya.png" alt="Yaeru et Kiya"><span class="photo-note">Yaeru et Kiya — une relation au cœur de son intrigue.</span><img class="person-photo" src="yaeru-combat.jpg" alt="Yaeru en combat"><span class="photo-note">Yaeru — un shinobi forgé par les conflits.</span><h4>Personnage passé</h4><div class="chips"><span class="chip">Déserteur de Konoha</span><span class="chip">Ancien maître d’arme Aburame</span><span class="chip">Membre de la famille mineure « Minazuki »</span><span class="chip">Maître Raiton</span><span class="chip">Maître Genjutsu</span><span class="chip">Ticket RPK sur Shaku et Yurai</span><span class="chip">Expert Bukijutsu</span><span class="chip">Bras droit de la Yugarame</span><span class="chip">Responsable des bas-gradés</span><span class="chip">Ennemi des Aburame</span><span class="chip">Ticket Vol lunette Aburame (Réussit)</span><span class="chip">Infiltration à Konoha et au domaine Aburame</span><span class="chip">Infiltration au Jardin Aburame (Secret de clan - Secteur event)</span><span class="chip">Participation aux différents conflits interclans</span></div></div>
+          <div><h4>Apport et impact</h4><p>Yaeru était issu d’un métissage entre les familles Aburame et Minazuki. Son parcours reposait sur sa volonté de trouver sa place entre ses deux familles. À Konoha, il était responsable des bas-gradés et organisait des entraînements, des tournois et différentes activités afin de maintenir une animation régulière au village.</p><p>Il était également gérant du BDM, où il proposait des missions plus variées afin d’éviter les scénarios répétitifs et de permettre à plusieurs joueurs d’avoir un rôle important. Son évolution en Genjutsu lui a permis de créer des cours et des entraînements présentant différentes utilisations de cet art. J’ai également réservé des builds à plusieurs reprises afin d’offrir des scènes qualitatives et diversifiées.</p><p>Une grande partie de son histoire s’est construite autour des Aburame. Kiya, qu’il considérait comme sa sœur jumelle, a rompu une règle imposée aux clans par Kashimo Hyūga lors d’une réunion à laquelle le clan Uchiha n’était pas convié. Cela a conduit à sa mort au Jardin Aburame. Yaeru a voulu la venger avant de comprendre que le clan voulait également le tuer. Ces événements l’ont finalement conduit à déserter Konoha. Sous l’identité de Yuno, il a continué à développer son personnage à travers le Genjutsu, les relations inter-villages et différentes factions.</p><h4>Créer du jeu</h4><p>Yaeru cherchait à créer du jeu plutôt qu’à le consommer : entraînements, tournois, missions diversifiées, cours de Genjutsu et intrigues durables avec les Aburame. Cette histoire a même eu des conséquences sur le clan, qui ne possède désormais plus de maître d’arme attitré afin qu’un maître ne soit pas automatiquement entraîné dans les fautes de son Aburame respectif.</p></div>
+        </div></details>
+        <details><summary><span class="summary-number">02</span><span><b>Azren Kaguya</b><small>Jonin nukenin · Escouade nukenin</small></span><i>+</i></summary><div class="detail-grid">
+          <div><img class="person-photo" src="azren-kaguya.jpg" alt="Azren Kaguya"><span class="photo-note">Azren — un Kaguya différent des autres.</span><img class="person-photo" src="azren.png" alt="Azren et Kiyomi"><span class="photo-note">Un enseignement éclairé par la lune et les valeurs de Kiyomi.</span><img class="person-photo" src="azren-kaguya-clan.jpg" alt="Azren parmi les Kaguya"><span class="photo-note">Azren — au milieu de son clan et de son héritage.</span><h4>Profil</h4><p>Membre d’une escouade nukenin, expert en Genjutsu et en Bukijutsu, détenteur d’un contrat d’affiliation avec Konoha et maître complet du pouvoir Kaguya.</p><div class="chips"><span class="chip">Missions avec l’escouade nukenin</span><span class="chip">Négociations avec Konoha</span><span class="chip">Opérations de terrain</span><span class="chip">Enquêtes pour Konoha</span><span class="chip">Relations avec les Senju, les Hyūga et les Kaguya</span><span class="chip">Localisation de la base des FS de Kiri transmise à Konoha</span><span class="chip">RPK du chef de clan Kaguya en combat à mort (Azren l’a épargné, mais pouvait le RPK)</span><span class="chip">Azren a porté les dagues Kaguya</span><span class="chip">Expert Genjutsu</span><span class="chip">Expert Bukijutsu</span></div></div>
+          <div><h4>Apport et impact</h4><p>Azren a refusé de rester enfermé dans son escouade. Sa relation avec Keirama Senju a évolué jusqu’à l’hébergement de l’escouade au domaine Senju, puis à la création d’un contrat avec Konoha. Kiyomi Hyūga l’a également pris comme disciple, ce qui a créé un jeu régulier autour de l’apprentissage, de la transmission et de son évolution personnelle.</p><p>Le clan Kaguya représentait une autre partie importante de son histoire : Azren cherchait à comprendre ses origines, à découvrir les traditions du clan et à se rapprocher de ses membres. Il a aussi participé à de nombreuses missions, négociations et opérations, avant de transmettre à Konoha la localisation de la base des Forces spéciales de Kiri.</p><h4>Créer du jeu</h4><p>Avec Azren, l’objectif était de créer des liens avec des joueurs extérieurs à son groupe : hébergement au domaine Senju, contrat avec Konoha, relation de disciple avec Kiyomi Hyūga et recherche d’identité au sein du clan Kaguya. Le personnage évoluait à travers les autres, jamais seul.</p></div>
+        </div></details>
+        <details><summary><span class="summary-number">03</span><span><b>Kyota Kinatsushi</b><small>Tokubetsu jonin de Suna</small></span><i>+</i></summary><div class="detail-grid">
+          <div><h4>Profil</h4><div class="chips"><span class="chip">Tokubetsu jonin de Suna</span><span class="chip">Expert en Genjutsu</span><span class="chip">Expert médical</span><span class="chip">Chef médecin</span><span class="chip">Responsable de la psychologie</span><span class="chip">Officier de la Koan</span><span class="chip">Membre du BDM</span></div></div>
+          <div><h4>Apport et impact</h4><p>Kyota apportait du RP grâce à ses deux domaines principaux : la médecine et le Genjutsu. À l’hôpital de Suna, il était médecin, s’occupait de la psychologie des patients, accompagnait les plus jeunes et les formait.</p><p>Au sein de la Koan, il organisait des missions et des enquêtes impliquant plusieurs joueurs et permettant de créer du lose RP. Au BDM, il contribuait à la création de missions inter-villages. Enfin, il avait manipulé certains membres du culte du serpent, obtenant des informations sur le culte de Tensen et ouvrant une nouvelle piste de jeu.</p></div>
+        </div></details>
+      </div>
+    </div></section>
+
+    <section id="jeu"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">04 · Ce que Jengetsu apporte</div><h2>Un personnage qui invite les autres à entrer.</h2></div><p>Son histoire ne se joue pas en solitaire : elle s’appuie sur les clans, les héritiers, les rivalités et les alliances.</p></div>
+      <div class="columns reveal"><article class="card"><h3>Ses forces</h3><p>Ambitieux, charismatique, cultivé et visionnaire. Jengetsu pense au-delà de la scène immédiate et cherche les conséquences qui feront grandir le RP.</p><div class="chips"><span class="chip">Leadership</span><span class="chip">Diplomatie</span><span class="chip">Genjutsu</span><span class="chip">Transmission</span></div></article><article class="card"><h3>Ses failles</h3><p>Un complexe d’infériorité, de l’orgueil et un besoin de reconnaissance. Son obsession de l’héritage peut aussi l’empêcher de voir les liens les plus simples.</p><div class="chips"><span class="chip">Comparaison</span><span class="chip">Orgueil</span><span class="chip">Reconnaissance</span><span class="chip">Héritage</span></div></article><article class="card"><h3>Ses objectifs</h3><p><b>Court terme :</b> découvrir l’œuvre de Seigetsu, se faire un nom, découvrir le monde et trouver ses propres alliés.<br><br><b>Moyen terme :</b> créer son propre cercle, développer l’influence Hōzuki et préparer la génération suivante.</p></article><article class="card"><h3>Sa promesse de jeu</h3><p><b>Long terme :</b> créer le Cercle des Héritiers, dépasser Seigetsu en bâtissant quelque chose de plus durable et devenir un nom à part entière.</p></article></div>
+    </div></section>
+
+  </main>
+  <footer><div class="wrap"><div>Jengetsu Hōzuki — L’héritier du nom</div><span>Une candidature pensée pour faire vivre le monde, pas seulement le personnage.</span></div></footer>  <div class="music-player" id="music-player" aria-hidden="true"><iframe id="youtube-player" title="Musique de la candidature" src="about:blank" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe><div class="music-caption"><span>Hijo de la Luna</span><a href="https://youtu.be/V_jQ81v_xf8?si=JKo4sXicGFzDDhOl" target="_blank" rel="noreferrer">Ouvrir YouTube</a><button id="close-music" aria-label="Fermer le lecteur">×</button></div></div>
+  <script>
+    const io = new IntersectionObserver(entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    const player = document.getElementById('music-player');
+    const youtube = document.getElementById('youtube-player');
+    const videoUrl = 'https://www.youtube.com/embed/V_jQ81v_xf8?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+    const button = document.getElementById('sound');
+    const closeMusic = document.getElementById('close-music');
+    button.addEventListener('click', () => {
+      const open = !player.classList.contains('open');
+      youtube.src = open ? videoUrl : 'about:blank';
+      player.classList.toggle('open', open);
+      player.setAttribute('aria-hidden', String(!open));
+      button.classList.toggle('on', open);
+      button.textContent = open ? 'Son activé' : 'Jouer le son';
+    });
+    closeMusic.addEventListener('click', () => {
+      youtube.src = 'about:blank';
+      player.classList.remove('open');
+      player.setAttribute('aria-hidden', 'true');
+      button.classList.remove('on');
+      button.textContent = 'Jouer le son';
+    });
+  </script>
+</body>
+</html>
